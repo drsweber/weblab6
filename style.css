@@ -1,0 +1,121 @@
+body{
+    background-image: url(img/start.jpg);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#svet,
+#dark{
+    
+    position: fixed;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    z-index: 2;
+    top:50%;
+    font-size: 20px;
+    vertical-align: middle;
+    text-align:  center;
+}
+#svet{
+    left: 5%;
+    background-color: #ff6;
+    color: #15071d;
+    box-shadow: 0 0 20px  #15071d;
+    animation: svet;
+    transition: 2s;
+}
+#svet:hover  {
+    -webkit-transform: scale(2);
+    -ms-ransform: scale(2);
+    transform: scale(2);
+    box-shadow: 0 0 20px  #ff6;
+}
+#dark{
+    right: 5%;
+    background-color: #15071d;
+    color: #ff6;
+    box-shadow: 0 0 20px   #15071d;
+    animation: dark;
+}
+#dark:hover{
+    opacity: 0;
+}
+img#cinema {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+h2,h3 {
+    text-align: center;
+}
+#titles
+{
+    color: #ff6;
+	position: absolute;
+	width: 20em;
+	height: 50em;
+	bottom: 0;
+	left: 50%;
+	margin-left: -10em;
+	font-size: 350%;
+	font-weight: bold;
+	text-align: justify;
+	overflow: hidden;
+	transform-origin: 50% 100%;
+	transform: perspective(300px) rotateX(25deg);
+}
+#titles:after
+{
+	position: absolute;
+	content: ' ';
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 60%;
+	background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+	pointer-events: none;
+}
+#titlecontent
+{
+	position: absolute;
+	top: 100%;
+	animation: scroll 30s linear 0s infinite;
+}
+img#yoda{
+    position: absolute;
+    bottom: 14%;
+    left: 30%;
+    width: 450px;
+}
+img#speech{
+    position: absolute;
+    top: 12%;
+    right: 30%;
+    width: 350px;
+}
+div#speechtext{
+    width: 350px;
+    position: absolute;
+    font-size: 30px;
+    top: 26%;
+    right: 27%;
+}
+img#yoda,
+img#speech,
+div#speechtext{
+    opacity: 0;
+    animation: yodaspeech 30s linear 0s infinite;
+    
+}
+
+@keyframes scroll {
+	0% { top: 100%; }
+	100% { top: -170%; }
+}
+
+@keyframes yodaspeech {
+    0% { opacity: 0; }
+    70% { opacity: 0; }
+    80% { opacity: 1; }
+    90% { opacity: 1; }
+    100%{ opacity: 0; }
+}
